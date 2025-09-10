@@ -1,0 +1,327 @@
+/* Custom Game Animations for Color Match Rush */
+
+/* Fade in up animation for notifications */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out;
+}
+
+/* Pulse glow animation for combo indicators */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px currentColor;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 1s ease-in-out infinite;
+}
+
+/* Bounce in animation for achievements */
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-100px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Shake animation for misses */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Floating animation for orbs */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Rotate animation for wheels */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate {
+  animation: rotate 2s linear infinite;
+}
+
+/* Scale bounce for buttons */
+@keyframes scale-bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-scale-bounce {
+  animation: scale-bounce 0.3s ease-in-out;
+}
+
+/* Gradient shift for title */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Particle explosion effect */
+@keyframes particle-explosion {
+  0% {
+    opacity: 1;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(360deg);
+  }
+}
+
+.animate-particle-explosion {
+  animation: particle-explosion 0.6s ease-out forwards;
+}
+
+/* Success ring animation */
+@keyframes success-ring {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+.animate-success-ring {
+  animation: success-ring 0.8s ease-out forwards;
+}
+
+/* Level up celebration */
+@keyframes level-celebration {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-180deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-level-celebration {
+  animation: level-celebration 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Game over fade in */
+@keyframes game-over-fade {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+
+.animate-game-over {
+  animation: game-over-fade 1s ease-out;
+}
+
+/* High score celebration */
+@keyframes high-score-celebration {
+  0%, 100% {
+    transform: rotate(-3deg) scale(1);
+  }
+  25% {
+    transform: rotate(3deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(-3deg) scale(1);
+  }
+  75% {
+    transform: rotate(3deg) scale(1.1);
+  }
+}
+
+.animate-high-score {
+  animation: high-score-celebration 2s ease-in-out infinite;
+}
+
+/* Combo meter fill */
+@keyframes fill-meter {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: var(--fill-percentage);
+  }
+}
+
+.animate-fill {
+  animation: fill-meter 0.5s ease-out forwards;
+}
+
+/* Loading dots */
+@keyframes loading-dots {
+  0%, 20% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80%, 100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.animate-loading-dots {
+  animation: loading-dots 1.5s ease-in-out infinite;
+}
+
+.animate-loading-dots:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.animate-loading-dots:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Power-up glow effect */
+@keyframes power-up-glow {
+  0% {
+    box-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+  100% {
+    box-shadow: 0 0 5px currentColor;
+  }
+}
+
+.animate-power-up-glow {
+  animation: power-up-glow 2s ease-in-out infinite;
+}
+
+/* Mobile specific optimizations */
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile for better performance */
+  .animate-particle-explosion {
+    animation-duration: 0.4s;
+  }
+  
+  .animate-pulse-glow {
+    animation-duration: 1.5s;
+  }
+  
+  .animate-gradient {
+    animation-duration: 4s;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-pulse-glow,
+  .animate-bounce-in,
+  .animate-shake,
+  .animate-float,
+  .animate-rotate,
+  .animate-scale-bounce,
+  .animate-gradient,
+  .animate-particle-explosion,
+  .animate-success-ring,
+  .animate-level-celebration,
+  .animate-game-over,
+  .animate-high-score,
+  .animate-fill,
+  .animate-loading-dots,
+  .animate-power-up-glow {
+    animation: none !important;
+    transition: none !important;
+  }
+}
